@@ -1,3 +1,10 @@
 name: WarningsAndNotes
 main: com.sdpyro.warningsandnotes.WarningsAndNotes
 version: .01
+
+commands:
+  wan:
+    description: This is a test command that prints Hello World to the console.
+    usage: /wan
+    permission: warningsandnotes.wan
+    permission-message: You no take my candle!
