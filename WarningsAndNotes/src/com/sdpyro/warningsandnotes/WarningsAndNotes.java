@@ -40,7 +40,9 @@ public class WarningsAndNotes extends JavaPlugin {
 							   "/warn user reason - Give user a warning because of reason\n" +
 							   "/warnings [user] - If no arguments are given, view your own warnings. Otherwise view warnings of given user\n" +
 							   "/notes [user] [delete] - View notes of either self or given user. If delete option is present then delete note for self or user\n" +
-							   "");
+							   "/clearwarns user [id] - Clear warnings for user, or clear warning specified by id.\n" +
+							   "/modifywarn user id - Modify user's warning given by id.\n\n" +
+							   "For more help visit https://github.com/sdpyro/WarningsAndNotes !\n");
 		}
 		return false;
 	}
