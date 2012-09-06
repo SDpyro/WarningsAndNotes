@@ -1,7 +1,7 @@
 WarningsAndNotes
 ================
 
-A user warnings &amp; notes system for bukkit/MineCraft
+A Warnings and Notes plugin for the Bukkit family of Minecraft servers.
 
 <h3>Proposed Functionality</h3>
 <table>
