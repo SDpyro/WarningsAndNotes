@@ -6,7 +6,7 @@ A Warnings and Notes plugin for the Bukkit family of Minecraft servers.
 <h3>Proposed Functionality</h3>
 <table>
 	<tr>
-		<th>Command</th><th>Shortcut</th><th>Description</th><th>Status</th>
+		<th>Command</th><th>Shortcut</th><th>Description</th><th>Status [Y|N]</th>
 	</tr>
 	<tr>
 		<td>/warn [perm] user reason</td><td>N/A</td><td>Warn the user for given reason. Optionally include a permission level required to view the warning.</td><td>N</td>
