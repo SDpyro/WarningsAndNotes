@@ -5,7 +5,7 @@
 	</tstamp>
 	<property name="pluginname" value="WarningsAndNotes_${tstamped}"/>
 	<property name="bukkit.jar" location="bukkit.jar"/>
-	<property name="finishedbuilds" location="/home/sdpyro/finished_builds"/>
+	<property name="deploy" location="/home/sdpyro/deploy"/>
 
 	<property name="src" location="src"/>
 	<property name="bin" location="bin"/>
@@ -34,7 +34,7 @@
 	</target>
 
 	<target name="deploy" depends="dist">
-		<copy todir="${finishedbuilds}">
+		<copy todir="${deploy}">
 			<fileset file="${dist}/${pluginname}.jar"/>
 		</copy>
 	</target>
