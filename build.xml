@@ -3,7 +3,7 @@
 	<tstamp>
 		<format property="tstamped" pattern="dd-MM-yy" locale="en,US"/>
 	</tstamp>
-	<property name="pluginname" value="WarningsAndNotes_${tstamped}"/>
+	<property name="pluginname" value="WarningsAndNotes_nightly_${tstamped}"/>
 	<property name="bukkit.jar" location="bukkit.jar"/>
 	<property name="deploydir" location="/home/sdpyro/deploy"/>
 
