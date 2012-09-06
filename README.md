@@ -27,7 +27,7 @@ A user warnings &amp; notes system for bukkit/MineCraft
 		<td>/wan</td><td>N/A</td><td>N/A</td><td>View available commands.</td><td>N</td>
 	</tr>
 	<tr>
-		<td>/wan reload</td>N/A</td><td>wan.reload</td><td>Reload WarningsAndNotes.</td><td>N</td>
+		<td>/wan reload</td><td>N/A</td><td>wan.reload</td><td>Reload WarningsAndNotes.</td><td>N</td>
 	</tr>
 	<tr>
 		<td>/wan stats [warnings|notes]</td><td>N/A</td><td>wan.stats</td><td>Display all statistics OR just stats about [warnings|notes].</td><td>N</td>
