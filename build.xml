@@ -1,16 +1,23 @@
-<project name="WarningsAndNotes" default="dist" basedir="WarningsAndNotes/">
-	<property name="pluginname" value="WarningsAndNotes"/>
+<project name="WarningsAndNotes" default="clean" basedir="WarningsAndNotes/">
+	<!-- Add timestamp of the format dd-MMM-yy to the filename -->
+	<tstamp>
+		<format property="tstamped" pattern="dd-MM-yy" locale="en,US"/>
+	</tstamp>
+	<property name="pluginname" value="WarningsAndNotes_nightly_${tstamped}"/>
 	<property name="bukkit.jar" location="bukkit.jar"/>
-	<property name="finishedbuilds" location="/home/sdpyro/finished_builds"/>
+	<property name="deploydir" location="/home/sdpyro/deploy"/>
 
 	<property name="src" location="src"/>
 	<property name="bin" location="bin"/>
 	<property name="dist" location="dist"/>
+	
+	
 
 	<target name="init">
 		<mkdir dir="${bin}"/>
 	</target>
 
+	<!-- Compile  the raw Java files -->
 	<target name="compile" depends="init">
 		<javac srcdir="${src}/com/sdpyro/warningsandnotes" destdir="${bin}" includeantruntime="false">
 			<classpath>
@@ -19,6 +26,7 @@
 		</javac>
 	</target>
 
+	<!-- Turn the compiled Java into a jar file with the bukkit API included -->
 	<target name="dist" depends="compile">
 		<mkdir dir="${dist}"/>
 		<jar jarfile="${dist}/${pluginname}.jar">
@@ -27,11 +35,15 @@
 		</jar>
 	</target>
 
+	<!-- Move the completed build to the deploy directory -->
 	<target name="deploy" depends="dist">
-		<copy file="${dist}/${pluginname}.jar" todir="${finishedbuilds}"/>
+		<copy todir="${deploydir}">
+			<fileset file="${dist}/${pluginname}.jar"/>
+		</copy>
 	</target>
 
-	<target name="clean">
+	<!-- Clean up the jenkins build directory -->
+	<target name="clean" depends="deploy">
 		<delete dir="${bin}"/>
 		<delete dir="${dist}"/>
 	</target>
