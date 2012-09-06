@@ -16,13 +16,13 @@ public class WarningsAndNotes extends JavaPlugin {
 	@Override
 	public void onEnable(){
 		//TODO Insert logic to be performed when plugin is enabled.
-		getLogger().info("WarningsAndNotes on Enable invoked!");
+		getLogger().info("WarningsAndNotes successfully started.");
 	}
 	
 	@Override
 	public void onDisable(){
 		//TODO Insert logic to be performed when plugin is disabled.
-		getLogger().info("WarningsAndNotes on Disabled invoked!");
+		getLogger().info("WarningsAndNotes successfully stopped.");
 	}
 	/**
 	 * onCommand at present only implements the /wan command, a simple HelloWorld print statement.
@@ -32,15 +32,15 @@ public class WarningsAndNotes extends JavaPlugin {
 	 */
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		if(cmd.getName().equalsIgnoreCase("wan")) {
-			//If this command was not executed on the console then deny access
-			if (!(sender instanceof ConsoleCommandSender)){
-				sender.sendMessage("This command can only be run in the console.");
-				getLogger().info("User "+sender+" attempted to use /wan in game.");
-				return false;
-			}
-			sender.sendMessage("Hello World!");
-			getLogger().info("User "+sender+" executed the /wan command");
-			return false;
+			sender.sendMessage("WarningsAndNotes Command List\n" +
+							   "/wan - print this help message\n" +
+							   "/wan reload	- reload the wan plugin\n" +
+							   "/wan stats [warnings|notes] - print total statistics, prints either warnings or notes statistics if given\n" +
+							   "/twarns - Toggle the ability for users to view their warnings\n" +
+							   "/warn user reason - Give user a warning because of reason\n" +
+							   "/warnings [user] - If no arguments are given, view your own warnings. Otherwise view warnings of given user\n" +
+							   "/notes [user] [delete] - View notes of either self or given user. If delete option is present then delete note for self or user\n" +
+							   "");
 		}
 		return false;
 	}
