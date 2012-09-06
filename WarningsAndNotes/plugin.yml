@@ -1,6 +1,10 @@
 name: WarningsAndNotes
 main: com.sdpyro.warningsandnotes.WarningsAndNotes
 version: .01
+description: A Warnings and Notes plugin for the Bukkit family of Minecraft servers.
+load: STARTUP
+authors: [SDpyro, balshazar]
+website: https://github.com/SDpyro/WarningsAndNotes
 
 commands:
   wan:
@@ -8,3 +12,60 @@ commands:
     usage: /wan
     permission: warningsandnotes.wan
     permission-message: You no take my candle!
+    
+permissions:
+  wan.*:
+    description: Gives access to all WarningsAndNotes commands.
+    children:
+      wan.warnings.*: true
+      wan.notes.*: true
+      wan.twarns: true
+      wan.reload: true
+      wan.stats: true
+  wan.warnings.*:
+    description: Allow full access to check and modify warnings commands for self and others.
+    children:
+      wan.warnings.check.self: true
+      wan.warnings.check.others: true
+      wan.warnings.modify.self: true
+      wan.warnings.modify.others: true
+  wan.notes.*:
+    description: Allow full access to check and modify notes commands for self and others.
+    children:
+      wan.notes.check.self: true
+      wan.notes.check.others: true
+      wan.notes.modify.self: true
+      wan.notes.moidfy.others: true
+  wan.warnings.check.self
+    description: Allow access to check self warnings.
+    default: true
+  wan.warnings.check.others
+  	description: Allows access to check others warnings.
+  	default: op
+  wan.warnings.modify.self
+    description: Allow access to modify self warnings.
+    default: false
+  wan.warnings.modify.others
+    description: Allows access to modify others warnings.
+    default: op
+  wan.notes.check.self
+    description: Allow access to check self notes.
+    default: op
+  wan.notes.check.others
+    description: Allow access to check others notes.
+    default: op
+  wan.notes.modify.self
+    description: Allow access to modify self notes.
+    default: op
+  wan.notes.modify.others
+    description: Allow access to modify others notes.
+    default: op
+  wan.twarns:
+    description: Allows toggling of warnings and notes for a player.
+    default: Admin
+  wan.reload:
+    description: Allows access to the reload command for the plugin.
+    default: Admin
+  wan.stats:
+    description: Allows access to commands for statistical data gathered by wan
+    default: op
