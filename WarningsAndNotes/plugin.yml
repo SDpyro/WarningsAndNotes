@@ -40,8 +40,8 @@ permissions:
     description: Allow access to check self warnings.
     default: true
   wan.warnings.check.others:
-  	description: Allows access to check others warnings.
-  	default: op
+    description: Allows access to check others warnings.
+    default: op
   wan.warnings.modify.self:
     description: Allow access to modify self warnings.
     default: false
