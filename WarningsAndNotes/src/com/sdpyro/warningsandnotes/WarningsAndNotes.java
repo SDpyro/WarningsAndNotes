@@ -44,9 +44,14 @@ public class WarningsAndNotes extends JavaPlugin {
 							   "/modifywarn user id - Modify user's warning given by id.\n\n" +
 							   "For more help visit https://github.com/sdpyro/WarningsAndNotes !\n");
 			return true;
-		} else if((cmd.getName().equalsIgnoreCase("wan")) && (args[0].equalsIgnoreCase("reload"))){
+		} /*else if((cmd.getName().equalsIgnoreCase("wan")) && (args[0].equalsIgnoreCase("reload"))){
 			sender.sendMessage("Yes, this makes sense.");
 			return true;
+		}*/
+		if(cmd.getName().equalsIgnoreCase("wan") && !(args==null)){
+			for(int i=0;i<args.length;i++){
+				sender.sendMessage(args[0]);
+			}
 		}
 		return false;
 	}
