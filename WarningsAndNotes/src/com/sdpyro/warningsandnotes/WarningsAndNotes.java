@@ -35,7 +35,7 @@ public class WarningsAndNotes extends JavaPlugin {
 			sender.sendMessage("Yes, this makes sense.");
 			return true;
 		}*/
-		if(cmd.getName().equalsIgnoreCase("wan") && (args[0].equalsIgnoreCase("reload"))){
+		if(cmd.getName().equalsIgnoreCase("wan") && (args[1].equalsIgnoreCase("reload"))){
 			for(int i=0;i<args.length;i++){
 				sender.sendMessage(args[0]);
 			}
