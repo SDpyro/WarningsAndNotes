@@ -31,7 +31,7 @@ public class WarningsAndNotes extends JavaPlugin {
 	 * @param cmd The command being sent to the plugin.
 	 */
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-		if((cmd.getName().equalsIgnoreCase("wan")) && (args==null)) {
+		if(cmd.getName().equalsIgnoreCase("wan")) {
 			sender.sendMessage("WarningsAndNotes Command List\n" +
 							   "/wan - print this help message\n" +
 							   "/wan reload	- reload the wan plugin\n" +
@@ -48,7 +48,7 @@ public class WarningsAndNotes extends JavaPlugin {
 			sender.sendMessage("Yes, this makes sense.");
 			return true;
 		}*/
-		if(cmd.getName().equalsIgnoreCase("wan") && !(args==null)){
+		else if(cmd.getName().equalsIgnoreCase("wan") && !(args==null)){
 			for(int i=0;i<args.length;i++){
 				sender.sendMessage(args[0]);
 			}
