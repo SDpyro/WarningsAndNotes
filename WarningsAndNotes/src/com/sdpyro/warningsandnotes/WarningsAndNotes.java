@@ -1,5 +1,11 @@
 package com.sdpyro.warningsandnotes;
-
+/**
+ * @author balshazar
+ * @author sdpyro
+ * @version .01
+ * 
+ * A Warnings and Notes plugin for the Bukkit family of Minecraft servers.
+ */
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
@@ -14,7 +20,7 @@ public class WarningsAndNotes extends JavaPlugin {
 	
 	@Override
 	public void onDisable(){
-		//TODO Insert loic to be performed when plugin is disabled.
+		//TODO Insert logic to be performed when plugin is disabled.
 		getLogger().info("WarningsAndNotes on Disabled invoked!");
 	}
 	
