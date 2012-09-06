@@ -1,4 +1,4 @@
-<project name="WarningsAndNotes" default="all" basedir="WarningsAndNotes/">
+<project name="WarningsAndNotes" default="init" basedir="WarningsAndNotes/">
 	<!-- Add timestamp of the format dd-MMM-yy to the filename -->
 	<tstamp>
 		<format property="tstamped" pattern="dd-MM-yy" locale="en,US"/>
