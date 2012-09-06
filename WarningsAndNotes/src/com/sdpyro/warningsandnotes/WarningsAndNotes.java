@@ -24,6 +24,8 @@ public class WarningsAndNotes extends JavaPlugin {
 		getLogger().info("WarningsAndNotes on Disabled invoked!");
 	}
 	/**
+	 * onCommand at present only implements the /wan command, a simple HelloWorld print statement.
+	 * 
 	 * @param sender The user or object initiating the command.
 	 * @param cmd The command being sent to the plugin.
 	 */
