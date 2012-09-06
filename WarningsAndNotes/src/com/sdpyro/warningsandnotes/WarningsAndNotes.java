@@ -31,27 +31,27 @@ public class WarningsAndNotes extends JavaPlugin {
 	 * @param cmd The command being sent to the plugin.
 	 */
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-		if(cmd.getName().equalsIgnoreCase("wan")) {
-			sender.sendMessage("WarningsAndNotes Command List\n" +
-							   "/wan - print this help message\n" +
-							   "/wan reload	- reload the wan plugin\n" +
-							   "/wan stats [warnings|notes] - print total statistics, prints either warnings or notes statistics if given\n" +
-							   "/twarns - Toggle the ability for users to view their warnings\n" +
-							   "/warn user reason - Give user a warning because of reason\n" +
-							   "/warnings [user] - If no arguments are given, view your own warnings. Otherwise view warnings of given user\n" +
-							   "/notes [user] [delete] - View notes of either self or given user. If delete option is present then delete note for self or user\n" +
-							   "/clearwarns user [id] - Clear warnings for user, or clear warning specified by id.\n" +
-							   "/modifywarn user id - Modify user's warning given by id.\n\n" +
-							   "For more help visit https://github.com/sdpyro/WarningsAndNotes !\n");
-			return true;
-		} /*else if((cmd.getName().equalsIgnoreCase("wan")) && (args[0].equalsIgnoreCase("reload"))){
+		 /*else if((cmd.getName().equalsIgnoreCase("wan")) && (args[0].equalsIgnoreCase("reload"))){
 			sender.sendMessage("Yes, this makes sense.");
 			return true;
 		}*/
-		else if(cmd.getName().equalsIgnoreCase("wan") && !(args==null)){
+		if(cmd.getName().equalsIgnoreCase("wan") && !(args==null)){
 			for(int i=0;i<args.length;i++){
 				sender.sendMessage(args[0]);
 			}
+		} else if(cmd.getName().equalsIgnoreCase("wan")) {
+			sender.sendMessage("WarningsAndNotes Command List\n" +
+					   "/wan - print this help message\n" +
+					   "/wan reload	- reload the wan plugin\n" +
+					   "/wan stats [warnings|notes] - print total statistics, prints either warnings or notes statistics if given\n" +
+					   "/twarns - Toggle the ability for users to view their warnings\n" +
+					   "/warn user reason - Give user a warning because of reason\n" +
+					   "/warnings [user] - If no arguments are given, view your own warnings. Otherwise view warnings of given user\n" +
+					   "/notes [user] [delete] - View notes of either self or given user. If delete option is present then delete note for self or user\n" +
+					   "/clearwarns user [id] - Clear warnings for user, or clear warning specified by id.\n" +
+					   "/modifywarn user id - Modify user's warning given by id.\n\n" +
+					   "For more help visit https://github.com/sdpyro/WarningsAndNotes !\n");
+			return true;
 		}
 		return false;
 	}
