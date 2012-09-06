@@ -1,7 +1,7 @@
 name: WarningsAndNotes
 main: com.sdpyro.warningsandnotes.WarningsAndNotes
 version: .01
-description: A Warnings and Notes plugin for the Bukkit family of Minecraft servers.
+description: A Warnings and Notes plugin for the Bukkit family of Minecraft servers
 load: STARTUP
 authors: [SDpyro, balshazar]
 website: https://github.com/SDpyro/WarningsAndNotes
@@ -15,7 +15,7 @@ commands:
     
 permissions:
   wan.*:
-    description: Gives access to all WarningsAndNotes commands.
+    description: Gives access to all WarningsAndNotes commands
     children:
       wan.warnings.*: true
       wan.notes.*: true
@@ -23,14 +23,14 @@ permissions:
       wan.reload: true
       wan.stats: true
   wan.warnings.*:
-    description: Allow full access to check and modify warnings commands for self and others.
+    description: Allow full access to check and modify warnings commands for self and others
     children:
       wan.warnings.check.self: true
       wan.warnings.check.others: true
       wan.warnings.modify.self: true
       wan.warnings.modify.others: true
   wan.notes.*:
-    description: Allow full access to check and modify notes commands for self and others.
+    description: Allow full access to check and modify notes commands for self and others
     children:
       wan.notes.check.self: true
       wan.notes.check.others: true
