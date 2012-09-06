@@ -60,7 +60,7 @@ public class WarningsAndNotes extends JavaPlugin {
 			sender.sendMessage("Invalid command argument");
 			return false;
 			
-		} else if((cmd.getName().equalsIgnoreCase("wan") && (args.length == 3))){
+		} else if((cmd.getName().equalsIgnoreCase("wan") && (args.length == 2))){
 			if(args[0].equalsIgnoreCase("stats")){
 				if(args[1].equalsIgnoreCase("warnings")){
 					sender.sendMessage("This triggers warning statistics. Not Implemented yet.");
