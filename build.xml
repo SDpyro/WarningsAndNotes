@@ -1,8 +1,8 @@
 <project name="WarningsAndNotes" default="dist" basedir="WarningsAndNotes/">
 	<!-- Add timestamp of the format dd-MMM-yy to the filename -->
-	<dstamp>
+	<tstamp>
 		<format property="tstamped" locale="en,US"/>
-	</dstamp>
+	</tstamp>
 	<property name="pluginname" value="WarningsAndNotes${tstamped}"/>
 	<property name="bukkit.jar" location="bukkit.jar"/>
 	<property name="finishedbuilds" location="/home/sdpyro/finished_builds"/>
