@@ -35,9 +35,9 @@ public class WarningsAndNotes extends JavaPlugin {
 			sender.sendMessage("Yes, this makes sense.");
 			return true;
 		}*/
-		if(cmd.getName().equalsIgnoreCase("wan") && (args[1].equalsIgnoreCase("reload"))){
+		if(cmd.getName().equalsIgnoreCase("wan") && !(args==null)){//(args[1].equalsIgnoreCase("reload"))){
 			for(int i=0;i<args.length;i++){
-				sender.sendMessage(args[0]);
+				sender.sendMessage(args[i]);
 			}
 		} else if(cmd.getName().equalsIgnoreCase("wan")) {
 			sender.sendMessage("WarningsAndNotes Command List\n" +
