@@ -43,6 +43,10 @@ public class WarningsAndNotes extends JavaPlugin {
 							   "/clearwarns user [id] - Clear warnings for user, or clear warning specified by id.\n" +
 							   "/modifywarn user id - Modify user's warning given by id.\n\n" +
 							   "For more help visit https://github.com/sdpyro/WarningsAndNotes !\n");
+			return true;
+		} else if((cmd.getName().equalsIgnoreCase("wan")) && (args[0].equalsIgnoreCase("reload"))){
+			sender.sendMessage("Yes, this makes sense.");
+			return true;
 		}
 		return false;
 	}
