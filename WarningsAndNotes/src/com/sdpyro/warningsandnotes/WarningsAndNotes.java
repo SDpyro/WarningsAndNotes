@@ -36,9 +36,7 @@ public class WarningsAndNotes extends JavaPlugin {
 			return true;
 		}*/
 		if(cmd.getName().equalsIgnoreCase("wan") && !(args==null)){//(args[1].equalsIgnoreCase("reload"))){
-			for(int i=0;i<args.length;i++){
-				sender.sendMessage(args[i]);
-			}
+			sender.sendMessage(Integer.toString(args.length));
 		} else if(cmd.getName().equalsIgnoreCase("wan")) {
 			sender.sendMessage("WarningsAndNotes Command List\n" +
 					   "/wan - print this help message\n" +
