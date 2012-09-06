@@ -1,6 +1,5 @@
 package com.sdpyro.warningsandnotes;
 
-import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
@@ -10,7 +9,7 @@ public class WarningsAndNotes extends JavaPlugin {
 	@Override
 	public void onEnable(){
 		//TODO Insert logic to be performed when plugin is enabled.
-		getLogger().info("WarningsAndNotes onEnable invoked!");
+		getLogger().info("WarningsAndNotes on Enable invoked!");
 	}
 	
 	@Override
