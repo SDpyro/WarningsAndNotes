@@ -35,9 +35,7 @@ public class WarningsAndNotes extends JavaPlugin {
 			sender.sendMessage("Yes, this makes sense.");
 			return true;
 		}*/
-		if(cmd.getName().equalsIgnoreCase("wan") && !(args==null)){//(args[1].equalsIgnoreCase("reload"))){
-			sender.sendMessage(Integer.toString(args.length));
-		} else if(cmd.getName().equalsIgnoreCase("wan")) {
+		if((cmd.getName().equalsIgnoreCase("wan")) && (args.length == 0)) {
 			sender.sendMessage("WarningsAndNotes Command List\n" +
 					   "/wan - print this help message\n" +
 					   "/wan reload	- reload the wan plugin\n" +
@@ -50,6 +48,14 @@ public class WarningsAndNotes extends JavaPlugin {
 					   "/modifywarn user id - Modify user's warning given by id.\n\n" +
 					   "For more help visit https://github.com/sdpyro/WarningsAndNotes !\n");
 			return true;
+		}else if((cmd.getName().equalsIgnoreCase("wan")) && (args.length == 1)){
+			if (args[0].equalsIgnoreCase("reload")){
+				sender.sendMessage("C'est possible?");
+				return true;
+			}
+			
+			sender.sendMessage("Invalid command argument");
+			return false;
 		}
 		return false;
 	}
