@@ -7,9 +7,6 @@ authors: [SDpyro, balshazar]
 website: https://github.com/SDpyro/WarningsAndNotes
 
 commands:
- dumb:
-    description: nothing, this is a test.
-
   wan:
     description: This is a test command that prints Hello World to the console.
     usage: /wan
