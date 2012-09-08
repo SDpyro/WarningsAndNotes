@@ -2,7 +2,7 @@ package com.sdpyro.warningsandnotes;
 /**
  * A Warnings and Notes plugin for the Bukkit family of Minecraft servers.
  * @author balshazar
- * @author sdpyro
+ * @author SDpyro
  * @version .01
  * 
  * 
@@ -12,17 +12,19 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
 
+var version = "0.01"
+
 public class WarningsAndNotes extends JavaPlugin {
 	@Override
 	public void onEnable(){
 		//TODO Insert logic to be performed when plugin is enabled.
-		getLogger().info("WarningsAndNotes successfully started.");
+		getLogger().info("WarningsAndNotes v" + version + " started.");
 	}//onEnable
 	
 	@Override
 	public void onDisable(){
 		//TODO Insert logic to be performed when plugin is disabled.
-		getLogger().info("WarningsAndNotes successfully stopped.");
+		getLogger().info("WarningsAndNotes v" + version + " stopped."); //
 	}//onDisable
 	/**
 	 * onCommand at present only implements the /wan command, a simple HelloWorld print statement.
