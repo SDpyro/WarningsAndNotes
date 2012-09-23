@@ -2,7 +2,7 @@ package com.sdpyro.warningsandnotes;
 /**
  * A Warnings and Notes plugin for the Bukkit family of Minecraft servers.
  * @author balshazar
- * @author sdpyro
+ * @author SDpyro
  * @version .01
  * 
  * 
