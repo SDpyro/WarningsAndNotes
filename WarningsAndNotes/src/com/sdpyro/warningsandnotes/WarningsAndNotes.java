@@ -2,7 +2,7 @@ package com.sdpyro.warningsandnotes;
 /**
  * A Warnings and Notes plugin for the Bukkit family of Minecraft servers.
  * @author balshazar
- * @author SDpyro
+ * @author sdpyro
  * @version .01
  * 
  * 
@@ -11,20 +11,27 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
-
-var version = "0.01"
+import org.bukkit.configuration.file.FileConfiguration;
 
 public class WarningsAndNotes extends JavaPlugin {
+		
+	private FileConfiguration customConfig = null;
+	private File customConfigFile = null;
+	
+	
 	@Override
 	public void onEnable(){
 		//TODO Insert logic to be performed when plugin is enabled.
-		getLogger().info("WarningsAndNotes v" + version + " started.");
+		getLogger().info("WarningsAndNotes successfully started.");
+		
+		// Save a copy of the default config.yml if one is not there
+		this.saveDefaultConfig();
 	}//onEnable
 	
 	@Override
 	public void onDisable(){
 		//TODO Insert logic to be performed when plugin is disabled.
-		getLogger().info("WarningsAndNotes v" + version + " stopped."); //
+		getLogger().info("WarningsAndNotes successfully stopped.");
 	}//onDisable
 	/**
 	 * onCommand at present only implements the /wan command, a simple HelloWorld print statement.
@@ -50,7 +57,8 @@ public class WarningsAndNotes extends JavaPlugin {
 		} else if((cmd.getName().equalsIgnoreCase("wan")) && (args.length == 1)){
 			//Reload the plugin
 			if (args[0].equalsIgnoreCase("reload")){
-				sender.sendMessage("This triggers a plugin reload. Not implemented yet.");
+			    this.reloadConfig();
+				sender.sendMessage("WarningsAndNotes reloaded.");
 				return true;
 			}
 			
