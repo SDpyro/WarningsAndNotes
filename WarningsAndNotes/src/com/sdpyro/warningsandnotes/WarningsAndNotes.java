@@ -16,7 +16,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 public class WarningsAndNotes extends JavaPlugin {
 		
 	private FileConfiguration customConfig = null;
-	private File customConfigFile = null;
+//	private File customConfigFile = null;
 	
 	
 	@Override
