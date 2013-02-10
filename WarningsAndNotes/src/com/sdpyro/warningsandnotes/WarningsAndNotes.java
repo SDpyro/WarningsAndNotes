@@ -4,12 +4,8 @@ package com.sdpyro.warningsandnotes;
  * @author balshazar
  * @author SDpyro
  * @version .01
- * 
- * 
  */
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandSender;
-import org.bukkit.command.ConsoleCommandSender;
+import org.bukkit.command.*;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.configuration.file.FileConfiguration;
 
@@ -22,6 +18,10 @@ public class WarningsAndNotes extends JavaPlugin {
 	@Override
 	public void onEnable(){
 		//TODO Insert logic to be performed when plugin is enabled.
+		
+		//We probably WANt to read values from the configuration file here.
+		parseConfig();
+		
 		getLogger().info("WarningsAndNotes successfully started.");
 		
 		// Save a copy of the default config.yml if one is not there
@@ -34,18 +34,21 @@ public class WarningsAndNotes extends JavaPlugin {
 		getLogger().info("WarningsAndNotes successfully stopped.");
 	}//onDisable
 	/**
-	 * onCommand at present only implements the /wan command, a simple HelloWorld print statement.
+	 * onCommand at present only implements the /WAN command, a simple HelloWorld print statement.
 	 * 
 	 * @param sender The user or object initiating the command.
 	 * @param cmd The command being sent to the plugin.
+	 * @param label 
+	 * @param args The arguments passed with the command.
 	 */
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+		boolean WAN = cmd.getName().equalsIgnoreCase("WAN");
 		//Print help message
-		if((cmd.getName().equalsIgnoreCase("wan")) && (args.length == 0)) {
+		if((WAN) && (args.length == 0)) {
 			sender.sendMessage("WarningsAndNotes Command List\n" +
-					   "/wan - print this help message\n" +
-					   "/wan reload	- reload the wan plugin\n" +
-					   "/wan stats [warnings|notes] - print total statistics, prints either warnings or notes statistics if given\n" +
+					   "/WAN - print this help message\n" +
+					   "/WAN reload	- reload the WAN plugin\n" +
+					   "/WAN stats [warnings|notes] - print total statistics, prints either warnings or notes statistics if given\n" +
 					   "/twarns - Toggle the ability for users to view their warnings\n" +
 					   "/warn user reason - Give user a warning because of reason\n" +
 					   "/warnings [user] - If no arguments are given, view your own warnings. Otherwise view warnings of given user\n" +
@@ -54,7 +57,7 @@ public class WarningsAndNotes extends JavaPlugin {
 					   "/modifywarn user id - Modify user's warning given by id.\n\n" +
 					   "For more help visit https://github.com/sdpyro/WarningsAndNotes !\n");
 			return true;
-		} else if((cmd.getName().equalsIgnoreCase("wan")) && (args.length == 1)){
+		} else if((WAN) && (args.length == 1)){
 			//Reload the plugin
 			if (args[0].equalsIgnoreCase("reload")){
 			    this.reloadConfig();
@@ -63,14 +66,14 @@ public class WarningsAndNotes extends JavaPlugin {
 			}
 			
 			if (args[0].equalsIgnoreCase("stats")){
-				sender.sendMessage("This triggers plugin statistics. Not implemented yet.");
+				sender.sendMessage(aggregateStatistics());
 				return true;
 			}
 			
 			sender.sendMessage("Invalid command argument");
 			return false;
 			
-		} else if((cmd.getName().equalsIgnoreCase("wan") && (args.length == 2))){
+		} else if((WAN && (args.length == 2))){
 			if(args[0].equalsIgnoreCase("stats")){
 				if(args[1].equalsIgnoreCase("warnings")){
 					sender.sendMessage("This triggers warning statistics. Not Implemented yet.");
@@ -86,9 +89,20 @@ public class WarningsAndNotes extends JavaPlugin {
 			
 			sender.sendMessage("Invalid command argument");
 			return false;
-		}//if wan with 3 args
+		}//if WAN with 3 args
 		
 		return false;
 	}//onCommand
+	
+	private void parseConfig() {
+		//TODO Parse the configuration file.
+	}//praseConfig
+	
+	private String aggregateStatistics() {
+		//TODO Grab statistics from both the Warnings and Notes YAML files.
+		// This function should return a pretty printed string that we can
+		// send to the command initiator.
+		return "This functionality has not been implemented yet.";
+	}
 
 }//WarningsAndNotes
